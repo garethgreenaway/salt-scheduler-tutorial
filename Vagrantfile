@@ -10,6 +10,8 @@ Vagrant.configure("2") do |config|
 
   config.vm.hostname = "salt"
 
+  config.vm.synced_folder "srv/", "/srv/"
+
   config.vm.provision "shell", inline: <<-SHELL
     # Install Salt
     wget -O - https://repo.saltstack.com/py3/ubuntu/18.04/amd64/latest/SALTSTACK-GPG-KEY.pub | sudo apt-key add -
@@ -26,6 +28,6 @@ Vagrant.configure("2") do |config|
     sudo systemctl stop salt-master.service
 
     # Create out state location
-    mkdir /srv/salt
+    #mkdir /srv/salt
   SHELL
 end

@@ -4,4 +4,3 @@ job_one:
     - seconds: 10
     - metadata:
         foo: bar
-    - returner: rawfile_json
