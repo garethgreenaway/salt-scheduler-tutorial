@@ -20,14 +20,9 @@ Vagrant.configure("2") do |config|
     apt-get install -y salt-master salt-minion
 
     # Disable and stop minion
-    sudo systemctl disable salt-minion.service
     sudo systemctl stop salt-minion.service
 
     # Disable and stop master 
-    sudo systemctl disable salt-master.service
     sudo systemctl stop salt-master.service
-
-    # Create out state location
-    #mkdir /srv/salt
   SHELL
 end
